@@ -1,0 +1,51 @@
+<!-- Add a container for the pages -->
+<div class="page-container">
+    <!-- Content for the first page -->
+    <h2>Page 1</h2>
+    <p>This is the content for the first page.</p>
+</div>
+
+<div class="page-container">
+    <!-- Content for the second page -->
+    <h2>Page 2</h2>
+    <p>This is the content for the second page.</p>
+</div>
+
+<!-- Add a page navigation -->
+<div class="page-navigation">
+    <button data-page="1" class="active">Page 1</button>
+    <button data-page="2">Page 2</button>
+</div>
+
+<script>
+// JavaScript code to handle page navigation
+const pageButtons = document.querySelectorAll('.page-navigation button');
+const pageContainers = document.querySelectorAll('.page-container');
+
+pageButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove the 'active' class from all buttons
+        pageButtons.forEach(btn => btn.classList.remove('active'));
+
+        // Add the 'active' class to the clicked button
+        button.classList.add('active');
+
+        // Hide all page containers
+        pageContainers.forEach(container => container.style.display = 'none');
+
+        // Show the corresponding page container
+        const pageNumber = parseInt(button.dataset.page);
+        pageContainers[pageNumber - 1].style.display = 'block';
+    });
+});
+</script>
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="revolver-game.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Revolver in video games</h1>
+        <div><img src="fc5ma.jpeg" alt="1"></div>
+        <p>The revolver is one of the most iconic weapons in video games. It appears in various genres, including action, adventure games, and shooters. Its use is often associated with speed, accuracy, and a sense of classic style.</p>
+        <p>In some games, revolvers have special characteristics such as high stopping power but low ammo capacity. These weapons usually require players to aim carefully and manage their resources wisely.</p>
+        <p>Some of the most famous video games where the revolver plays an important role include:</p>
+        <ul>
+            <li><strong>Red Dead Redemption</strong> - This Rockstar Games title features a variety of revolvers that players can use in the wild west.</li>
+            <li><strong>Resident Evil</strong> - In the Resident Evil series, revolvers are powerful weapons used against zombies and mutant enemies.</li>
+            <li><strong>Half-Life</strong> - In Half-Life, the revolver is one of the most powerful weapons with high accuracy and power.</li>
+        </ul>
+    </div>
+
+    <label for="gun-select">Choose a gun:</label>
+    <select id="gun-select">
+        <option value="pyt">pyt</option>
+        <option value="rem">rem</option>
+        <option value="col">col</option>
+        <option value="smi">smi</option>
+    </select>
+
+    <div id="gun-image-container">
+        <img id="gun-image" src="" alt="Selected Gun">
+        <p id="gun-description"></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const gunSelect = document.getElementById('gun-select');
+            const gunImage = document.getElementById('gun-image');
+            const gunDescription = document.getElementById('gun-description');
+
+            const guns = {
+                pyt: {
+                    image: '1836rev.jpg',
+                    description: 'Very classical and popular'
+                },
+                rem: {
+                    image: '1860.jpg',
+                    description: 'Civil War gun-better version of 1836'
+                },
+                col: {
+                    image: '1873.jpeg',
+                    description: 'Accurate, fast, light'
+                },
+                smi: {
+                    image: '2act.jpg',
+                    description: 'Very fast shooting'
+                }
+            };
+
+            gunSelect.addEventListener('change', function() {
+                const selectedGun = gunSelect.value;
+                gunImage.src = guns[selectedGun].image;
+                gunDescription.textContent = guns[selectedGun].description;
+            });
+        });
+    </script>
+</body>
+<div class="page-navigator">
+    <a href="index-revolver.html">Revolver Page</a> | <a href="index-revolver-game.html">Game Page</a> | <a href="index-revolver-movies.html">Movies Page</a>
+</div>
+</html>
